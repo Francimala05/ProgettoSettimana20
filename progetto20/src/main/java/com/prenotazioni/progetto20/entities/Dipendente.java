@@ -21,6 +21,10 @@ public class Dipendente {
     private String cognome;
     private String username;
     private String email;
+    private String immagineProfilo;
+
+    @JoinColumn(name = "viaggio_id")
+    private Viaggio viaggio;
 
     @OneToMany(mappedBy = "dipendente")
     private List<Prenotazione> prenotazioni;
@@ -63,5 +67,21 @@ public class Dipendente {
 
     public void setPrenotazioni(List<Prenotazione> prenotazioni) {
         this.prenotazioni = prenotazioni;
+    }
+
+    public Viaggio getViaggio() {
+        return viaggio;
+    }
+
+    public void setViaggio(Viaggio viaggio) {
+        this.viaggio = viaggio;
+    }
+
+    public String getImmagineProfilo() {
+        return immagineProfilo;
+    }
+
+    public void setImmagineProfilo(String immagineProfilo) {
+        this.immagineProfilo = immagineProfilo;
     }
 }

@@ -18,7 +18,20 @@ public class Viaggio {
     private Long id;
     private LocalDate data;
     private String destinazione;
+
+    @Enumerated(EnumType.STRING)
     private StatoViaggio stato;
+
+    @OneToMany(mappedBy = "viaggio")
+    private List<Dipendente> dipendenti;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public LocalDate getData() {
         return data;
